@@ -1,16 +1,16 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const noteAPI = require('./routes/htmlRoutes')
 const PORT = process.env.PORT || 3001;
 
 // create routes for public folder
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // middleware for post/put requests
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/api', noteAPI);
+app.use(express.urlencoded({ extended: true }));
+
+
 
 // route paths
 const noteRoutes = require('./routes/noteRoutes.js');
