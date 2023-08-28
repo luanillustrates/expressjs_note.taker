@@ -12,7 +12,7 @@
   ## Description
   This simple note taking application provides a tasklist like site where you can add and view tasks set.
 
-  ![preview application](public\assets\screenshot.jpg)
+  ![preview application](public/assets/screenshot.jpg)
 
   ## Usage
   Follow the heroku deployed link here
