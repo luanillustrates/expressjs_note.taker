@@ -7,11 +7,11 @@ router.get('/api/notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'db/db.json'));
 });
 
-router.get('/', (req, res) => {
+router.get('/api/notes', (req, res) => {
     readFromFile('db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-router.post('./notes', (req, res) => {
+router.post('api/notes', (req, res) => {
     let db = fs.readFileSync('db/db.json');
     db = JSON.parse(db);
     res.json(db);
