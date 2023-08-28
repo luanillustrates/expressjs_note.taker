@@ -3,8 +3,12 @@ const router = require('express').Router();
 const path = require('path');
 const uuid = require('uuid');
 
-router.get('./notes', (req, res) => {
+router.get('/api/notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'db/db.json'));
+});
+
+router.get('/', (req, res) => {
+    readFromFile('db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 router.post('./notes', (req, res) => {
